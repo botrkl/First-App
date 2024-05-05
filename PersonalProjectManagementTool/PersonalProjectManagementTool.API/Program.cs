@@ -1,6 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using PersonalProjectManagementTool.DAL.Extensions;
 
-app.MapGet("/", () => "Hello World!");
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.InjectDAL(builder.Configuration);
+
+var app = builder.Build();
 
 app.Run();
