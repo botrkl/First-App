@@ -1,6 +1,8 @@
-﻿namespace PersonalProjectManagementTool.BLL.Models
+﻿using PersonalProjectManagementTool.BLL.Models;
+
+namespace PersonalProjectManagementTool.API.DTOs
 {
-    public class ListOfCardsModel
+    public class LIstOfCardsDTO
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
