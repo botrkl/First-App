@@ -1,6 +1,7 @@
 using PersonalProjectManagementTool.DAL.Extensions;
 using PersonalProjectManagementTool.BLL.Extensions;
 using Microsoft.AspNetCore.Mvc;
+using PersonalProjectManagementTool.API.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options =>
@@ -11,6 +12,7 @@ builder.Services.AddControllers(options =>
 
 builder.Services.InjectDAL(builder.Configuration);
 builder.Services.InjectBLL();
+builder.Services.AddMappers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
