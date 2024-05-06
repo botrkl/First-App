@@ -10,6 +10,7 @@ namespace PersonalProjectManagementTool.DAL.EntitesConfiguration
         {
             builder.HasKey(x => x.Id);
 
+            builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.Property(x => x.Description).IsRequired();
             builder.Property(x => x.TimeOfAction).IsRequired();
             builder.Property(x => x.CardId).IsRequired();

@@ -50,7 +50,7 @@ namespace PersonalProjectManagementTool.DAL.Migrations
 
                     b.HasIndex("ListId");
 
-                    b.ToTable("Card");
+                    b.ToTable("Card", (string)null);
                 });
 
             modelBuilder.Entity("PersonalProjectManagementTool.DAL.Entities.CardActivity", b =>
@@ -73,7 +73,7 @@ namespace PersonalProjectManagementTool.DAL.Migrations
 
                     b.HasIndex("CardId");
 
-                    b.ToTable("CardActivity");
+                    b.ToTable("CardActivity", (string)null);
                 });
 
             modelBuilder.Entity("PersonalProjectManagementTool.DAL.Entities.ListOfCards", b =>
@@ -88,7 +88,7 @@ namespace PersonalProjectManagementTool.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ListOfCards");
+                    b.ToTable("ListOfCards", (string)null);
                 });
 
             modelBuilder.Entity("PersonalProjectManagementTool.DAL.Entities.Card", b =>

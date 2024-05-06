@@ -10,6 +10,6 @@ namespace PersonalProjectManagementTool.API.DTOs
         public string Priority { get; set; }
         public string Description { get; set; }
         public Guid ListId { get; set; }
-        public virtual ICollection<CardActivityModel>? CardActivities { get; set; }
+        public virtual ICollection<CardActivityDTO>? CardActivities { get; set; }
     }
 }
