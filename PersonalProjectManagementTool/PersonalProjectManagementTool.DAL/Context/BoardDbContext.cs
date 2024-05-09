@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PersonalProjectManagementTool.DAL.DbDataGenerators;
 using PersonalProjectManagementTool.DAL.EntitesConfiguration;
 using PersonalProjectManagementTool.DAL.Entities;
 
@@ -19,6 +20,10 @@ namespace PersonalProjectManagementTool.DAL.Context
             modelBuilder.ApplyConfiguration(new ListOfCardsConfiguration()); ;
 
             base.OnModelCreating(modelBuilder);
+
+            ListOfCardsDataGenerator.Generate(modelBuilder);
+            СardDataGenerator.Generate(modelBuilder);
+            CardActivityDataGenerator.Generate(modelBuilder);
         }
     }
 }
