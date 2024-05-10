@@ -22,6 +22,12 @@ namespace PersonalProjectManagementTool.BLL.Services.CLasses
             await _cardActivityRepository.AddAsync(addCardActivity);
         }
 
+        public async Task<IList<CardActivityModel>?> GetAllCardActivitiesByCardIdAsync(Guid id)
+        {
+            var allCardsActivities = await _cardActivityRepository.GetAllCardActivitiesByCardIdAsync(id);
+            return _mapper.Map<IList<CardActivityModel>?>(allCardsActivities);
+        }
+
         public async Task<IList<CardActivityModel>?> GetAllCardsActivitiesAsync()
         {
             var allCardsActivities = await _cardActivityRepository.GetAllAsync();

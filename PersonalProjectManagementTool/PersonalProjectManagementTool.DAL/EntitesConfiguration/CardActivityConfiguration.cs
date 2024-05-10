@@ -9,6 +9,7 @@ namespace PersonalProjectManagementTool.DAL.EntitesConfiguration
         public void Configure(EntityTypeBuilder<CardActivity> builder)
         {
             builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id).ValueGeneratedOnAdd();
 
             builder.Property(x => x.Id).ValueGeneratedOnAdd();
             builder.Property(x => x.Description).IsRequired();

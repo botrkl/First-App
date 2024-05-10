@@ -2,6 +2,7 @@ using PersonalProjectManagementTool.DAL.Extensions;
 using PersonalProjectManagementTool.BLL.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using PersonalProjectManagementTool.API.Extensions;
+using PersonalProjectManagementTool.API.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(options =>
@@ -17,6 +18,7 @@ builder.Services.AddMappers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddScoped<ExceptionHandlingMiddleware>();
 var app = builder.Build();
 app.UseHsts();
 app.UseHttpsRedirection();

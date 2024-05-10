@@ -20,7 +20,7 @@ namespace PersonalProjectManagementTool.API.Controllers
         [HttpGet("board")]
         public async Task<IActionResult> FetchAllLists()
         {
-            var allList = await _listOfCardsService.GetAllListsOfCardsAsync();
+            var allList = await _listOfCardsService.GetAllListOfCardsWithCardsAsync();
             var allMappedList = _mapper.Map<List<ListOfCardsDTO>?>(allList);
             return Ok(allMappedList);
         }

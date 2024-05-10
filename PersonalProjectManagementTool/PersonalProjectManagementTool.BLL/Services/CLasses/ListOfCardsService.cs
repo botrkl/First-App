@@ -28,6 +28,12 @@ namespace PersonalProjectManagementTool.BLL.Services.CLasses
             await _listOfCardsRepository.DeleteAsync(id);
         }
 
+        public async Task<IList<ListOfCardsModel>?> GetAllListOfCardsWithCardsAsync()
+        {
+            var allListOfCardsWithCards = await _listOfCardsRepository.GetAllListOfCardsWithCardsAsync();
+            return _mapper.Map<IList<ListOfCardsModel>?>(allListOfCardsWithCards);
+        }
+
         public async Task<IList<ListOfCardsModel>?> GetAllListsOfCardsAsync()
         {
             var allListOfCards = await _listOfCardsRepository.GetAllAsync();

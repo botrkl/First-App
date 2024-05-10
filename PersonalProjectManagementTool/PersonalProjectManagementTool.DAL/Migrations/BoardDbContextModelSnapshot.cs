@@ -50,7 +50,7 @@ namespace PersonalProjectManagementTool.DAL.Migrations
 
                     b.HasIndex("ListId");
 
-                    b.ToTable("Card");
+                    b.ToTable("Card", (string)null);
 
                     b.HasData(
                         new
@@ -147,7 +147,7 @@ namespace PersonalProjectManagementTool.DAL.Migrations
 
                     b.HasIndex("CardId");
 
-                    b.ToTable("CardActivity");
+                    b.ToTable("CardActivity", (string)null);
 
                     b.HasData(
                         new
@@ -220,7 +220,7 @@ namespace PersonalProjectManagementTool.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ListOfCards");
+                    b.ToTable("ListOfCards", (string)null);
 
                     b.HasData(
                         new
