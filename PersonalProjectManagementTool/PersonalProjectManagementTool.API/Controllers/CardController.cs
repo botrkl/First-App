@@ -9,7 +9,7 @@ using PersonalProjectManagementTool.BLL.Services.Interfaces;
 
 namespace PersonalProjectManagementTool.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/api")]
     [ApiController]
     public class CardController : ControllerBase
     {
