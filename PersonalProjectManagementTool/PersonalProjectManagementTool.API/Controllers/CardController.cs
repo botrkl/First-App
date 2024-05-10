@@ -9,7 +9,7 @@ using PersonalProjectManagementTool.BLL.Services.Interfaces;
 
 namespace PersonalProjectManagementTool.API.Controllers
 {
-    [Route("/api")]
+    [Route("api")]
     [ApiController]
     public class CardController : ControllerBase
     {
@@ -22,7 +22,7 @@ namespace PersonalProjectManagementTool.API.Controllers
             _mapper = mapper;
         }
 
-        [HttpPost("/cards")]
+        [HttpPost("cards")]
         public async Task<IActionResult> AddCard([FromBody] AddCardDTO addCardDTO)
         {
             var mappedCard = _mapper.Map<AddCardModel>(addCardDTO);
@@ -30,14 +30,14 @@ namespace PersonalProjectManagementTool.API.Controllers
             return Ok();
         }
 
-        [HttpDelete("/cards/{id:guid}")]
+        [HttpDelete("cards/{id:guid}")]
         public async Task<IActionResult> RemoveCard(Guid id)
         {
             await _cardService.DeleteCardAsync(id);
             return Ok();
         }
 
-        [HttpPatch("/cards/{id:guid}")]
+        [HttpPatch("cards/{id:guid}")]
         public async Task<IActionResult> UpdateCard([FromBody] UpdateCardDTO updateCardDTO)
         {
             var mappedCard = _mapper.Map<UpdateCardModel>(updateCardDTO);
@@ -45,7 +45,7 @@ namespace PersonalProjectManagementTool.API.Controllers
             return Ok();
         }
 
-        [HttpGet("/cards/{id:guid}")]
+        [HttpGet("cards/{id:guid}")]
         public async Task<IActionResult> FetchCard(Guid id)
         {
             var card = await _cardService.GetCardByIdAsync(id);
@@ -53,7 +53,7 @@ namespace PersonalProjectManagementTool.API.Controllers
             return Ok(mappedCard);
         }
 
-        [HttpGet("/cards")]
+        [HttpGet("cards")]
         public async Task<IActionResult> FetchAllCardsAsync()
         {
             var allCard = await _cardService.GetAllCardsAsync();

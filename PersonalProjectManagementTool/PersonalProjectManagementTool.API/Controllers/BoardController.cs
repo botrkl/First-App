@@ -5,7 +5,7 @@ using PersonalProjectManagementTool.BLL.Services.Interfaces;
 
 namespace PersonalProjectManagementTool.API.Controllers
 {
-    [Route("/api")]
+    [Route("api")]
     [ApiController]
     public class BoardController : ControllerBase
     {
@@ -16,8 +16,8 @@ namespace PersonalProjectManagementTool.API.Controllers
             _mapper = mapper;
             _listOfCardsService = listOfCardsService;
         }
-        [HttpGet("/")]
-        [HttpGet("/board")]
+        [HttpGet("")]
+        [HttpGet("board")]
         public async Task<IActionResult> FetchAllLists()
         {
             var allList = await _listOfCardsService.GetAllListsOfCardsAsync();

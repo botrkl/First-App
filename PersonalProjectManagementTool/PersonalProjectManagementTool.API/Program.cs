@@ -26,11 +26,11 @@ app.UseSwaggerUI();
 
 app.UseCors(builder =>
 {
-    builder.WithOrigins("http://localhost:4200/")
+    builder.WithOrigins("http://localhost:4200")
            .AllowAnyHeader()
            .AllowAnyMethod();
 });
 
 app.MapControllers();
-
+app.UseHttpsRedirection();
 app.Run();
