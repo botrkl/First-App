@@ -1,0 +1,19 @@
+.board{
+    margin: 100px;;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .custom-button {
+    border: 1px solid black;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.arrow {
+    margin-right: 5px;
+    font-size: 24px;
+}

@@ -1,0 +1,12 @@
+<div class="board" *ngIf="board">
+    <div class="header">
+        <h2>{{ title }}</h2> 
+          <button class="history-button">
+            <span class="arrow">&#8634;</span>History
+        </button>
+    </div>
+    
+    <div *ngFor="let list of board" >
+        <app-list [listOfCard]="list"></app-list>
+    </div>  
+  </div>

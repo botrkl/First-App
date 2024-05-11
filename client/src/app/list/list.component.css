@@ -1,0 +1,68 @@
+.list-container{
+  float: left;
+}
+.add-new-card {
+  margin: 10px;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.add-new-card button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+h2{
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-menu {
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  border: 1px solid #d1d1d1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+
+
+.action-menu button {
+  color: #333333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+}
+
+.action-menu button:hover {
+  background-color: #f6f6f6;
+}
+
+.action-menu button:first-child {
+  border-bottom: 1px solid #d1d1d1;
+}
+
+/* Иконки для кнопок */
+.edit-icon:before {
+  content: '\\270E'; /* Unicode для иконки карандаша */
+  margin-right: 5px;
+}
+
+.delete-icon:before {
+  content: '\\1F5D1'; /* Unicode для иконки корзины */
+  margin-right: 5px;
+}
