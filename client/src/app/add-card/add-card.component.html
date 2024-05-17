@@ -1,0 +1,52 @@
+  <div class="modal-backdrop" *ngIf="showModal"></div>
+
+<div class="add-new-card">
+    <button (click)="openModal()"><h4>+ Add new card</h4></button>
+</div>
+
+<div class="modal" *ngIf="showModal">
+
+    <div class="modal-header">
+            <img (click)="showModal = false" src="assets/images/Close.png" class="closeIcon"/>
+    </div>
+    <div class="modal-body">
+        <div>
+            <input type="text" placeholder="New Card" class="input-card-title" [(ngModel)]="addCardModel.title">
+        </div>
+        <div>
+            <img  src="assets/images/List.png" class="ListIcon"/>List
+            <label>
+                For list
+                <select [(ngModel)]="addCardModel.listId">
+                    <option value="5F643A7A-27FD-4C48-8E88-A6E7C47E0A5C">1</option>
+                </select>
+            </label>
+        </div>
+
+        <div>
+            <img  src="assets/images/Calendar.png" class="CalendarIcon"/>Due date
+            <input type="date" [(ngModel)]="addCardModel.dueDate">
+        </div>
+
+        <div>
+            <img src="assets/images/Label.png" class="LabelIcon"/>Priority
+            <label>
+                Priority
+                <select [(ngModel)]="addCardModel.priority">
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+              </label>
+        </div>
+        <div>
+            <h2>Description</h2>
+            <input type="text" placeholder="Write some information..." class="input-card-description" [(ngModel)]="addCardModel.description">
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button (click)="onSubmit()" class="btn btn-primary">Save</button>
+        <button (click)="showModal = false" class="btn btn-secondary">Cancel</button>
+      </div>
+    </div>

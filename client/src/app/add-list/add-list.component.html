@@ -1,0 +1,17 @@
+<div class="listAdd-container">
+    <div class="listAdd-header">
+        <h2>Add another list</h2>
+        <img src="assets/images/Add.png" class="addIcon" (click)="isModalVisible = true">
+    </div>
+
+    <div *ngIf="isModalVisible">
+        <div class="modal-content">
+            <input type="text" placeholder="Enter list title..." class="input-field" [(ngModel)]="listTitle">
+            <div class="button-container">
+                <button (click)="addList(listTitle)">Add list</button>
+                <button (click)="isModalVisible = false">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

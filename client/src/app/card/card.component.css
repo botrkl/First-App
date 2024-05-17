@@ -1,25 +1,48 @@
-.card-container {
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  background-color: white;
-  margin: 10px;
+.card-container{
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+    margin: 10px;
+    color:dimgray;
+}
+.card-header{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    color: black;
+}
+.moreVertIcon{
+    width: 25px;
+}
+.calendarIcon{
+    width: 25px;
+    vertical-align: bottom;
+}
+.dotIcon{
+    width: 10px;
 }
 
-h2{
-  margin: 15px;
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} 
+.editIcon, .deleteIcon, .moreVertIcon{
+    width: 25px;
+}
 
-.card select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 10px;
+.dropdown-content button{
+    width: 100px;
 }

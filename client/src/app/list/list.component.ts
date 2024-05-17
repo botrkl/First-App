@@ -1,26 +1,53 @@
-import { Component, ContentChild, Input } from '@angular/core';
-import { listOfCardModel } from '../models/listOfCardModel';
+import { Component, Input } from '@angular/core';
+import { ListModel } from '../models/list.model';
 import { CardComponent } from '../card/card.component';
 import { CommonModule } from '@angular/common';
+import { ListService } from '../services/list.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { UpdateListModel } from '../models/updateModels/update-list.model';
+import { AddCardComponent } from '../add-card/add-card.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent,CommonModule],
+  imports: [CardComponent,CommonModule,HttpClientModule,FormsModule,AddCardComponent],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  styleUrl: './list.component.css',
+  providers:[ListService]
 })
 export class ListComponent {
-  @Input() listOfCard!:listOfCardModel;
-  showMenu = false;
+    @Input() list! : ListModel;
+    isEditing = false;
+    editedTitle = '';
 
-  toggleMenu() {
-    this.showMenu = !this.showMenu;
-  }
+    constructor(private listService: ListService) {}
 
-  editCard() {
-  }
+    editList(list:ListModel) {
+      this.isEditing = true;
+      this.editedTitle = list.title;
+    }
 
-  deleteCard() {
+    saveList(id:string) {
+      let updateListModel = new UpdateListModel();
+      updateListModel.id=id;
+      updateListModel.title=this.editedTitle;
+      this.isEditing = false;
+
+      this.listService.updateList(updateListModel).subscribe(response => {
+        console.log(response);
+        location.reload();
+      }, error => {
+        console.error(error);
+      });
+    }
+
+  deleteList(id:string){
+    this.listService.deleteList(id).subscribe(response => {
+      console.log(response);
+      location.reload();
+    }, error => {
+      console.error(error);
+    });
   }
 }

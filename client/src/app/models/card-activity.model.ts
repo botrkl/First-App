@@ -1,4 +1,4 @@
-export class cardActivityModel{
+export class CardActivityModel{
     id!: string;
     description!: string;
     timeOfAction!: Date;

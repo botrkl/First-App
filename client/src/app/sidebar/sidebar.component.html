@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <div class="sidebar-header">
+        <h2>History</h2>
+        <button class="close-button" (click)="close.emit()"><img src="assets/images/Close.png" class="closeIcon"></button>
+    </div>
+    <div>
+        <ul>
+            <li *ngFor="let item of activities">
+              Description: {{ item.description }}, Date: {{ item.timeOfAction }}
+            </li>
+          </ul>
+    </div>
+    <div class="sidebar-footer">
+        <button class="showMore-button"><img src="assets/images/History.png" class="showMoreIcon">Show More</button>
+    </div>
+  </div>

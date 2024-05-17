@@ -1,19 +1,16 @@
-.board{
-    margin: 100px;;
+.board-container{
+    margin: 100px;
 }
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .custom-button {
-    border: 1px solid black;
-    padding: 10px 20px;
-    font-size: 14px;
-    border-radius: 5px;
+.historyIcon{
+    width: 25px;
 }
-.arrow {
-    margin-right: 5px;
-    font-size: 24px;
+.history-button{
+  display: flex;
+  align-items: center;
+  background-color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px;
+  right: 100px;
+  position: fixed;
 }

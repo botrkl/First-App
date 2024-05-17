@@ -1,0 +1,35 @@
+.sidebar {
+    width: 350px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+  }
+.closeIcon{
+    width: 25px;
+}
+.close-button{
+    background: none;
+    border: 0px;
+}
+.sidebar-header{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    background-color: rgb(107, 107, 107);
+    padding: 20px;
+}
+.showMoreIcon{
+    width: 25px;
+}
+.showMore-button{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    width: 80%;
+    bottom: 0px;
+    position: absolute;
+    justify-content: center;
+}

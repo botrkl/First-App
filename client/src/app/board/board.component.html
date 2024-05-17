@@ -1,12 +1,13 @@
-<div class="board" *ngIf="board">
-    <div class="header">
-        <h2>{{ title }}</h2> 
-          <button class="history-button">
-            <span class="arrow">&#8634;</span>History
-        </button>
+<div class="board-container">
+    <div class="board-header">
+        <h2>Board</h2>
     </div>
-    
-    <div *ngFor="let list of board" >
-        <app-list [listOfCard]="list"></app-list>
-    </div>  
-  </div>
+    <button class="history-button" (click)="showSidebar = !showSidebar"><img src="assets/images/History.png" class="historyIcon">History</button>
+    <app-sidebar *ngIf="showSidebar" (close)="showSidebar = false"></app-sidebar>
+    <div *ngFor="let list of board.list" > 
+        <app-list [list]="list"></app-list>
+    </div> 
+    <div *ngIf="board.list.length < 4">
+        <app-add-list></app-add-list>
+    </div>
+</div>
